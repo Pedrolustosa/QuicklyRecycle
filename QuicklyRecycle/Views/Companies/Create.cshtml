@@ -1,0 +1,142 @@
+﻿@model QuicklyRecycle.Models.Company
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form asp-action="Create">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="CEP" class="control-label"></label>
+                    <input asp-for="CEP" class="form-control" id="cep" placeholder="Ex.: 00000-000"/>
+                    <span asp-validation-for="CEP" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="UF" class="control-label"></label>
+                    <select asp-for="UF" class="form-control" id="uf">
+                        <option value="" selected disabled hidden>Selecione uma Opção</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                        <option value="DF">Distrito Federal</option>
+                    </select>
+                    <span asp-validation-for="UF" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="Neighborhood" class="control-label"></label>
+                    <input asp-for="Neighborhood" class="form-control" id="bairro" />
+                    <span asp-validation-for="Neighborhood" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" id="cidade" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="PublicPlace" class="control-label"></label>
+                    <input asp-for="PublicPlace" class="form-control" id="logradouro" />
+                    <span asp-validation-for="PublicPlace" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Complement" class="control-label"></label>
+                    <input asp-for="Complement" class="form-control" />
+                    <span asp-validation-for="Complement" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Number" class="control-label"></label>
+                    <input asp-for="Number" class="form-control" placeholder="1254"/>
+                    <span asp-validation-for="Number" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CNPJ" class="control-label"></label>
+                    <input asp-for="CNPJ" class="form-control" id="cnpj" placeholder="00.000.000/0000-00" />
+                    <span asp-validation-for="CNPJ" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" id="phone" placeholder="(00) 0000-0000"/>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-sm btn-outline-success" />
+                    <a class="btn btn-sm btn-outline-primary" asp-action="Index">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+@* CEP *@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="//assets.locaweb.com.br/locastyle/2.0.6/javascripts/locastyle.js"></script>
+<script src="/js/CEP-Api.js"></script>
+<script src="https://unpkg.com/imask"></script>
+@* CEP *@
+@* Mask *@
+<script type="text/javascript" src="/js/Masks.js"></script>
+<script type="text/javascript" src="/js/MaskCnpj.js"></script>
+@* Mask *@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

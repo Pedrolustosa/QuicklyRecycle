@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container">
+    <div class="row mx-auto">
+
+        <!-- Company Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Empresas
+                            </div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">@ViewData["Companies"]</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-building fa-2x" style="color: #485460;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manager Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Gerentes
+                            </div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">@ViewData["Managers"]</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-building fa-2x" style="color: #485460;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recycle Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Reciclados
+                            </div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">@ViewData["Companies"]</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-building fa-2x" style="color: #485460;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scavenger Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Catadores
+                            </div>
+                            <div class="h6 mb-0 font-weight-bold text-gray-800">@ViewData["Companies"]</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-building fa-2x" style="color: #485460;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

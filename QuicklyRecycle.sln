@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuicklyRecycle", "QuicklyRecycle\QuicklyRecycle.csproj", "{476A1D61-BA61-41ED-B7BE-0EB547269ECB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{476A1D61-BA61-41ED-B7BE-0EB547269ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476A1D61-BA61-41ED-B7BE-0EB547269ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476A1D61-BA61-41ED-B7BE-0EB547269ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476A1D61-BA61-41ED-B7BE-0EB547269ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB70B9F3-BB54-4D6C-BEB8-6CEE4ED48353}
+	EndGlobalSection
+EndGlobal

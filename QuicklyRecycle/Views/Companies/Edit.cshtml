@@ -1,0 +1,80 @@
+﻿@model QuicklyRecycle.Models.Company
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UF" class="control-label"></label>
+                <input asp-for="UF" class="form-control" />
+                <span asp-validation-for="UF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Neighborhood" class="control-label"></label>
+                <input asp-for="Neighborhood" class="form-control" />
+                <span asp-validation-for="Neighborhood" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublicPlace" class="control-label"></label>
+                <input asp-for="PublicPlace" class="form-control" />
+                <span asp-validation-for="PublicPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complement" class="control-label"></label>
+                <input asp-for="Complement" class="form-control" />
+                <span asp-validation-for="Complement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CNPJ" class="control-label"></label>
+                <input asp-for="CNPJ" class="form-control" />
+                <span asp-validation-for="CNPJ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CEP" class="control-label"></label>
+                <input asp-for="CEP" class="form-control" />
+                <span asp-validation-for="CEP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label"></label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

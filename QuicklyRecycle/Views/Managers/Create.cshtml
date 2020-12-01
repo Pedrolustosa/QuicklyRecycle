@@ -1,0 +1,55 @@
+﻿@model QuicklyRecycle.Models.Manager
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <form asp-action="Create">
+        <div class="row">
+            <div class="col-md-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Telefone" class="control-label"></label>
+                    <input asp-for="Telefone" class="form-control" id="phone" placeholder="(00) 0000-0000"/>
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CompanyId" class="control-label"></label>
+                    <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId">
+                        <option value="" selected disabled hidden>Selecione a Empresa</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-sm btn-outline-success" />
+                <a class="btn btn-sm btn-outline-primary" asp-action="Index">Voltar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+@* CEP *@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="//assets.locaweb.com.br/locastyle/2.0.6/javascripts/locastyle.js"></script>
+<script src="https://unpkg.com/imask"></script>
+@* CEP *@
+@* Mask *@
+<script type="text/javascript" src="/js/Masks.js"></script>
+@* Mask *@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
