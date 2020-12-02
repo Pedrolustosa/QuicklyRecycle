@@ -15,5 +15,6 @@ namespace QuicklyRecycle.Data
 		}
 		public DbSet<QuicklyRecycle.Models.Company> Company { get; set; }
 		public DbSet<QuicklyRecycle.Models.Manager> Manager { get; set; }
+		public DbSet<QuicklyRecycle.Models.Collector> Collector { get; set; }
 	}
 }

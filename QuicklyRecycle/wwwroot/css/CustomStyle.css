@@ -1,4 +1,9 @@
-﻿/*Organization*/
+﻿.img{
+    background-image:url("../img/backgloginregister.jpg");
+}
+
+
+/*Organization*/
 .organization-sm{
     margin-bottom: 75px;
 }
