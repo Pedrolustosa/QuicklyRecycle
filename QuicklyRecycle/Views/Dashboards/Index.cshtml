@@ -36,7 +36,7 @@
                             <div class="h6 mb-0 font-weight-bold text-gray-800">@ViewData["Managers"]</div>
                         </div>
                         <div class="col-auto">
-                            <i class="far fa-building fa-2x" style="color: #485460;"></i>
+                            <i class="fas fa-user-tie fa-2x" style="color: #485460;"></i>
                         </div>
                     </div>
                 </div>
@@ -55,14 +55,14 @@
                             <div class="h6 mb-0 font-weight-bold text-gray-800">@ViewData["Companies"]</div>
                         </div>
                         <div class="col-auto">
-                            <i class="far fa-building fa-2x" style="color: #485460;"></i>
+                            <i class="fas fa-recycle fa-2x" style="color: #485460;"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Scavenger Card -->
+        <!-- Collector Card -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
@@ -74,7 +74,7 @@
                             <div class="h6 mb-0 font-weight-bold text-gray-800">@ViewData["Companies"]</div>
                         </div>
                         <div class="col-auto">
-                            <i class="far fa-building fa-2x" style="color: #485460;"></i>
+                            <i class="fas fa-people-carry fa-2x" style="color: #485460;"></i>
                         </div>
                     </div>
                 </div>
@@ -82,4 +82,51 @@
         </div>
 
     </div>
+
+
+
+    <div class="row">
+        <div class="col-md-7 p-1">
+            <div class="card border-left-danger shadow h-100">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Tipos Reciclados
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chart-pie fa-2x" style="color: #485460;"></i>
+                        </div>
+                    </div>
+                    <div class="row no-gutters align-items-center mx-auto">
+                        <canvas id="pie-chart" width="800" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 p-1">
+            <div class="card border-left-danger shadow h-100">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Reciclados e Não Reciclados
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chart-line fa-2x" style="color: #485460;"></i>
+                        </div>
+                    </div>
+                    <div class="row no-gutters align-items-center mx-auto">
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script type="text/javascript" src="~/js/ChartRecycle.js"></script> @*Line-chart*@
+<script type="text/javascript" src="~/js/ChartTypeRecycle.js"></script> @*piechart_3d*@

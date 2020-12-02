@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
+    @* Script Dashboard *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
     @* Loading Bar *@
     <link rel="stylesheet" href="/css/pace-theme-minimal.css" />
 
@@ -37,7 +40,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-area="" asp-controller="Home" asp-action="Index">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <img src="/img/logopng.png" style="height:30px; width:30px"/>
+                    <img src="/img/logopng.png" style="height:30px; width:30px" />
                 </div>
                 <div class="sidebar-brand-text mx-2">QuicklyRecycle</div>
             </a>
@@ -87,6 +90,7 @@
                         <h6 class="collapse-header"></h6>
                         <a class="collapse-item text-dark" asp-area="" asp-controller="Companies" asp-action="Index">Empresas</a>
                         <a class="collapse-item text-dark" asp-area="" asp-controller="Managers" asp-action="Index">Gerentes</a>
+                        <a class="collapse-item text-dark" asp-area="" asp-controller="Collectors" asp-action="Index">Coletadores</a>
                     </div>
                 </div>
             </div>
@@ -125,7 +129,7 @@
     </div>
 
     <!-- Custom scripts for all pages-->
-    
+
     <script src="/js/pace.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
