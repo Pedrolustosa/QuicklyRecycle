@@ -18,9 +18,11 @@ namespace QuicklyRecycle.Controllers
 		public ActionResult Index()
 		{
 			int qtdManagers = _context.Manager.Count();
+			int qtdCollectors = _context.Collector.Count();
 			int qtdCompanies = _context.Company.Count();
 			ViewData["Companies"] = qtdCompanies;
 			ViewData["Managers"] = qtdManagers;
+			ViewData["Collectors"] = qtdCollectors;
 			return View("Index");
 		}
 

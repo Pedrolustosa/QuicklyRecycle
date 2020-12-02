@@ -4,14 +4,9 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Create</h1>
-
-<h4>Collector</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-md-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -20,24 +15,25 @@
             </div>
             <div class="form-group">
                 <label asp-for="Landline" class="control-label"></label>
-                <input asp-for="Landline" class="form-control" id="phone"/>
+                <input asp-for="Landline" class="form-control" id="phone" />
                 <span asp-validation-for="Landline" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CellPhone" class="control-label"></label>
-                <input asp-for="CellPhone" class="form-control" id="cellphone"/>
+                <input asp-for="CellPhone" class="form-control" id="cellphone" />
                 <span asp-validation-for="CellPhone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index">Back to List</a>
             </div>
-        </form>
+        </div>
     </div>
-</div>
+</form>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
+
 
 
 @* CEP *@
