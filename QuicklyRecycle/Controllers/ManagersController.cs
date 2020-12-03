@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QuicklyRecycle.Data;
 using QuicklyRecycle.Models;
+using X.PagedList;
 
 namespace QuicklyRecycle.Controllers
 {
@@ -20,10 +21,17 @@ namespace QuicklyRecycle.Controllers
         }
 
         // GET: Managers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var applicationDbContext = _context.Manager.Include(m => m.Company);
-            return View(await applicationDbContext.ToListAsync());
+            var managers = from m in _context.Manager.Include(x => x.Company)
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                managers = managers.Where(s => s.Name.Contains(searchString));
+            }
+
+            return View(await managers.ToListAsync());
         }
 
         // GET: Managers/Details/5

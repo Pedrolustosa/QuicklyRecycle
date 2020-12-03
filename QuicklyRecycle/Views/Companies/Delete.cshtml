@@ -4,95 +4,95 @@
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container py-3">
+    <div class="card border border-dark">
+        <div class="card-header bg-dark text-white text-center">Deseja excluir essa Empresa</div>
+        <div class="card-body">
 
-<div class="card border border-dark">
-    <div class="card-header bg-dark text-white text-center">Deseja excluir essa Empresa</div>
-    <div class="card-body">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Excluir" class="btn btn-sm btn-outline-danger" />
+                <a class="btn btn-sm btn-outline-primary" asp-action="Index">Voltar</a>
+            </form>
 
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Excluir" class="btn btn-sm btn-outline-danger" />
-            <a class="btn btn-sm btn-outline-primary" asp-action="Index">Back to List</a>
-        </form>
+            <hr />
 
-        <hr />
-
-        <div class="row">
-            <div class="col-sm-12">
-                <label>Nome</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.Name)
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-2">
-                <label>CEP</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.CEP)
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Nome</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.Name)
+                    </div>
                 </div>
             </div>
 
-            <div class="col-sm-2">
-                <label>UF</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.UF)
+            <div class="row">
+                <div class="col-sm-2">
+                    <label>CEP</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.CEP)
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <label>UF</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.UF)
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <label>Bairro</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.Neighborhood)
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Logradouro</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.PublicPlace)
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <label>Cidade</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.City)
+                    </div>
                 </div>
             </div>
 
-            <div class="col-sm-2">
-                <label>Bairro</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.Neighborhood)
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Complemento</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.Complement)
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-sm-4">
-                <label>Logradouro</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.PublicPlace)
+                <div class="col-sm-2">
+                    <label>Número</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.Number)
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-sm-2">
-                <label>Cidade</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.City)
+                <div class="col-sm-3">
+                    <label>CNPJ</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.CNPJ)
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-sm-4">
-                <label>Complemento</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.Complement)
-                </div>
-            </div>
-
-            <div class="col-sm-2">
-                <label>Número</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.Number)
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <label>CNPJ</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.CNPJ)
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <label>Telefone</label>
-                <div class="form-control">
-                    @Html.DisplayFor(model => model.Phone)
+                <div class="col-sm-3">
+                    <label>Telefone</label>
+                    <div class="form-control">
+                        @Html.DisplayFor(model => model.Phone)
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QuicklyRecycle.Data;
 using QuicklyRecycle.Models;
+using X.PagedList;
 
 namespace QuicklyRecycle.Controllers
 {
@@ -20,9 +21,12 @@ namespace QuicklyRecycle.Controllers
         }
 
         // GET: Companies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pagina)
         {
-            return View(await _context.Company.ToListAsync());
+            const int itensPorPagina = 10;
+            int numeroPagina = (pagina ?? 1);
+
+            return View(await _context.Company.ToPagedListAsync(numeroPagina, itensPorPagina));
         }
 
         // GET: Companies/Details/5

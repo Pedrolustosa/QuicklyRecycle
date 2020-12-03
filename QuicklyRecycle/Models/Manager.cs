@@ -15,8 +15,8 @@ namespace QuicklyRecycle.Models
 		[Required]
 		public string Telefone { get; set; }
 		[Required]
+		[Display(Name = "Empresa")]
 		public int CompanyId { get; set; }
-		
 		public Company Company { get; set; }
 	}
 
