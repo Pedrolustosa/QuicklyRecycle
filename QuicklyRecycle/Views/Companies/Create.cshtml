@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="card border border-dark">
-        <div class="card-header bg-dark text-white text-center">Nova Empresa</div>
-        <div class="card-body">
-            <form asp-action="Create">
+<div class="container py-3">
+    <form asp-action="Create">
+        <div class="card border border-dark">
+            <div class="card-header bg-dark text-white text-center">Nova Empresa</div>
+            <div class="card-body">
 
                 <div class="row">
                     <div class="col-md-12">
@@ -116,7 +116,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="card-footer">
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
@@ -125,9 +127,9 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
 </div>
 
 

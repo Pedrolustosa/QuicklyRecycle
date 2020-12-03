@@ -1,9 +1,4 @@
-﻿.img{
-    background-image:url("../img/backgloginregister.jpg");
-}
-
-
-/*Organization*/
+﻿/*Organization*/
 .organization-sm{
     margin-bottom: 75px;
 }
@@ -78,11 +73,11 @@ body {
 .fixed-background {
     padding: 12rem 0;
     box-shadow: 0 0 1rem rgba(0,0,0, .25);
-    background-image: url('../img/automation4.jpg');
+    background-image: url('../img/Recycle1.jpg');
 }
 
 .fixed {
-    background-image: url('../img/automation4.jpg');
+    
     position: fixed;
 }
 

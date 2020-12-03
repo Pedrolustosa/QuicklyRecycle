@@ -1,21 +1,19 @@
-﻿@model IEnumerable<QuicklyRecycle.Models.Company>
+﻿@model X.PagedList.IPagedList<QuicklyRecycle.Models.Company>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Mvc.Common;
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container py-3">
+    <h2 class="font-weight-bold text-left display-3">Empresas</h2>
 
-<h2 class="font-weight-bold text-left display-3">Empresas</h2>
 
-<div class="container">
     <div class="card border-dark">
         <div class="card-header bg-dark text-light text-center"><i class="fas fa-table"></i> Lista</div>
         <div class="card-body">
             <div class="row container">
-                <form class="form-inline">
-                    <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                </form>
                 <a class="btn btn-sm btn-outline-success my-2 my-sm-0 m-2" asp-action="Create"><i class="fas fa-plus-circle"> Cadastrar</i></a>
             </div>
             <hr />
@@ -24,34 +22,34 @@
                     <thead class="text-center thead-light">
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.Name)
+                                Nome
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.UF)
+                                UF
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Neighborhood)
+                                Bairro
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.PublicPlace)
+                                Logradouro
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.City)
+                                Cidade
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Complement)
+                                Complemento
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.CNPJ)
+                                CNPJ
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.CEP)
+                                CEP
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Phone)
+                                Telefone
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Number)
+                                Número
                             </th>
                             <th>
                                 Ações
@@ -111,3 +109,11 @@
         </div>
     </div>
 </div>
+<br />
+@Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }), new PagedListRenderOptions
+{
+    PageClasses = new string[] { "page-link" },
+    UlElementClasses = new string[] { "pagination justify-content-center" },
+    LiElementClasses = new string[] { "page-item" },
+    DisplayItemSliceAndTotal = false
+})
