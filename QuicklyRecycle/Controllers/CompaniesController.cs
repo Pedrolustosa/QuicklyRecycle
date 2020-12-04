@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QuicklyRecycle.Data;
 using QuicklyRecycle.Models;
@@ -11,6 +9,7 @@ using X.PagedList;
 
 namespace QuicklyRecycle.Controllers
 {
+	[Authorize]
     public class CompaniesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -58,7 +57,7 @@ namespace QuicklyRecycle.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,UF,Neighborhood,PublicPlace,City,Complement,CNPJ,CEP,Phone,Number")] Company company)
+        public async Task<IActionResult> Create([Bind("Id,Name,UF,Neighborhood,PublicPlace,City,Complement,CNPJ,CEP,Phone,Number,TypeRecycling")] Company company)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +89,7 @@ namespace QuicklyRecycle.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,UF,Neighborhood,PublicPlace,City,Complement,CNPJ,CEP,Phone,Number")] Company company)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,UF,Neighborhood,PublicPlace,City,Complement,CNPJ,CEP,Phone,Number,TypeRecycling")] Company company)
         {
             if (id != company.Id)
             {

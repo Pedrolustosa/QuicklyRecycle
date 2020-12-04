@@ -48,6 +48,10 @@ namespace QuicklyRecycle.Models
 		[Display(Name = "Número")]
 		public string Number { get; set; }
 
+		[Required(ErrorMessage = "Escolha o tipo de Reciclagem principal da empresa")]
+		[Display(Name = "Reciclagem")]
+		public string TypeRecycling { get; set; }
+
 		public List<Manager> Manager { get; set; }
 	}
 }

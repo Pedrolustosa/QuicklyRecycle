@@ -1,9 +1,11 @@
 ﻿using QuicklyRecycle.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace QuicklyRecycle.Controllers
 {
+	[Authorize]
 	public class DashboardsController : Controller
 	{
 		private readonly ApplicationDbContext _context;
@@ -17,6 +19,7 @@ namespace QuicklyRecycle.Controllers
 		// GET: Dashboard
 		public ActionResult Index()
 		{
+			
 			int qtdManagers = _context.Manager.Count();
 			int qtdCollectors = _context.Collector.Count();
 			int qtdCompanies = _context.Company.Count();

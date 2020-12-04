@@ -13,11 +13,11 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger font-weight-bold"></div>
                         <div class="form-group">
                             <label asp-for="Name" class="control-label"></label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <input asp-for="Name" class="form-control" placeholder="Ex.: BlitzCompany A&C"/>
+                            <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label asp-for="CEP" class="control-label"></label>
                             <input asp-for="CEP" class="form-control" id="cep" placeholder="Ex.: 00000-000" />
-                            <span asp-validation-for="CEP" class="text-danger"></span>
+                            <span asp-validation-for="CEP" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -63,56 +63,75 @@
                                 <option value="TO">Tocantins</option>
                                 <option value="DF">Distrito Federal</option>
                             </select>
-                            <span asp-validation-for="UF" class="text-danger"></span>
+                            <span asp-validation-for="UF" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="Neighborhood" class="control-label"></label>
-                            <input asp-for="Neighborhood" class="form-control" id="bairro" />
-                            <span asp-validation-for="Neighborhood" class="text-danger"></span>
+                            <input asp-for="Neighborhood" class="form-control" id="bairro" placeholder="Ex.: Ottawa"/>
+                            <span asp-validation-for="Neighborhood" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="City" class="control-label"></label>
-                            <input asp-for="City" class="form-control" id="cidade" />
-                            <span asp-validation-for="City" class="text-danger"></span>
+                            <input asp-for="City" class="form-control" id="cidade" placeholder="Ex.: Byward Market"/>
+                            <span asp-validation-for="City" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="PublicPlace" class="control-label"></label>
-                            <input asp-for="PublicPlace" class="form-control" id="logradouro" />
-                            <span asp-validation-for="PublicPlace" class="text-danger"></span>
+                            <input asp-for="PublicPlace" class="form-control" id="logradouro" placeholder="Ex.: Street Canadian"/>
+                            <span asp-validation-for="PublicPlace" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="Complement" class="control-label"></label>
-                            <input asp-for="Complement" class="form-control" />
-                            <span asp-validation-for="Complement" class="text-danger"></span>
+                            <input asp-for="Complement" class="form-control" placeholder="Ex.: Apartamento N°7 - Perto da Rádio Clube"/>
+                            <span asp-validation-for="Complement" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="Number" class="control-label"></label>
-                            <input asp-for="Number" class="form-control" placeholder="1254" />
-                            <span asp-validation-for="Number" class="text-danger"></span>
+                            <input asp-for="Number" class="form-control" placeholder="Ex.: 1254" />
+                            <span asp-validation-for="Number" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="CNPJ" class="control-label"></label>
-                            <input asp-for="CNPJ" class="form-control" id="cnpj" placeholder="00.000.000/0000-00" />
-                            <span asp-validation-for="CNPJ" class="text-danger"></span>
+                            <input asp-for="CNPJ" class="form-control" id="cnpj" placeholder="Ex.: 00.000.000/0000-00" />
+                            <span asp-validation-for="CNPJ" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="Phone" class="control-label"></label>
-                            <input asp-for="Phone" class="form-control" id="phone" placeholder="(00) 0000-0000" />
-                            <span asp-validation-for="Phone" class="text-danger"></span>
+                            <input asp-for="Phone" class="form-control" id="phone" placeholder="Ex.: (00) 0000-0000" />
+                            <span asp-validation-for="Phone" class="text-danger font-weight-bold"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="TypeRecycling" class="control-label"></label>
+                            <select asp-for="TypeRecycling" class="form-control" id="uf">
+                                <option value="" selected disabled hidden>Selecione uma Opção</option>
+                                <option value="Papel">Papel</option>
+                                <option value="Plástico">Plástico</option>
+                                <option value="Vidro">Vidro</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Madeira">Madeira</option>
+                                <option value="Res. Perigoso">Res. Perigoso</option>
+                                <option value="Hospitalar">Hospitalar</option>
+                                <option value="Radioativo">Radioativo</option>
+                                <option value="Orgânicos">Orgânicos</option>
+                                <option value="Não Reciclavel">Não Reciclavel</option>
+                            </select>
+                            <span asp-validation-for="TypeRecycling" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                 </div>
