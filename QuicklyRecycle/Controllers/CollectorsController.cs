@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuicklyRecycle.Data;
@@ -8,6 +9,7 @@ using X.PagedList;
 
 namespace QuicklyRecycle.Controllers
 {
+	[Authorize]
 	public class CollectorsController : Controller
 	{
 		private readonly ApplicationDbContext _context;

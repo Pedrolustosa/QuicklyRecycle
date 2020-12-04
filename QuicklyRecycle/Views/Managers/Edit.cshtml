@@ -12,26 +12,26 @@
 
                 <div class="row">
                     <div class="col-md-7">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger font-weight-bold"></div>
                         <input type="hidden" asp-for="Id" />
                         <div class="form-group">
                             <label asp-for="Name" class="control-label"></label>
                             <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label asp-for="Telefone" class="control-label"></label>
                             <input asp-for="Telefone" class="form-control" />
-                            <span asp-validation-for="Telefone" class="text-danger"></span>
+                            <span asp-validation-for="Telefone" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="CompanyId" class="control-label"></label>
                             <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
-                            <span asp-validation-for="CompanyId" class="text-danger"></span>
+                            <span asp-validation-for="CompanyId" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                     <div class="col">
                         <div class="form-group">
                             <input type="submit" value="Save" class="btn btn-sm btn-outline-success" />
-                            <a class="btn btn-sm btn-outline-primary" asp-action="Index">Volatr</a>
+                            <a class="btn btn-sm btn-outline-primary" asp-action="Index">Voltar</a>
                         </div>
                     </div>
                 </div>
