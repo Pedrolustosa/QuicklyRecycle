@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +10,7 @@ using X.PagedList;
 
 namespace QuicklyRecycle.Controllers
 {
-	[Authorize]
+	
 	public class ManagersController : Controller
 	{
 		private readonly ApplicationDbContext _context;
@@ -23,33 +22,18 @@ namespace QuicklyRecycle.Controllers
 
 		// GET: Managers
 		public async Task<IActionResult> Index(int? pagina)
+
 		{
+
 			const int itensPorPagina = 10;
 			int numeroPagina = (pagina ?? 1);
 
-			var applicationDbContext = _context.Manager.Include(p => p.Company.Name);
+			
+			var applicationDbContext = _context.Manager.Include(p => p.Company);
+			//var test = _context.Manager.ToPagedListAsync(numeroPagina, itensPorPagina);
 			return View(await _context.Manager.ToPagedListAsync(numeroPagina, itensPorPagina));
 		}
-
-
-		// GET: Managers/Details/5
-		public async Task<IActionResult> Details(int? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
-
-			var manager = await _context.Manager
-				.Include(m => m.Company)
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (manager == null)
-			{
-				return NotFound();
-			}
-
-			return View(manager);
-		}
+		
 
 		// GET: Managers/Create
 		public IActionResult Create()
