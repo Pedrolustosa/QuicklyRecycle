@@ -1,17 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using QuicklyRecycle.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ReflectionIT.Mvc.Paging;
 
 namespace QuicklyRecycle
 {
@@ -33,6 +28,13 @@ namespace QuicklyRecycle
 			services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 				.AddEntityFrameworkStores<ApplicationDbContext>();
 			services.AddControllersWithViews();
+
+			services.AddPaging(options =>
+			{/*Paginação*/
+				options.ViewName = "Bootstrap4";
+				options.PageParameterName = "pageindex";
+			});
+
 			services.AddRazorPages();
 		}
 

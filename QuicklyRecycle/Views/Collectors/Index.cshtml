@@ -1,6 +1,6 @@
-﻿@model X.PagedList.IPagedList<QuicklyRecycle.Models.Collector>
-@using X.PagedList.Mvc.Core;
-@using X.PagedList.Mvc.Common;
+﻿@model ReflectionIT.Mvc.Paging.PagingList<QuicklyRecycle.Models.Collector>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, ReflectionIT.Mvc.Paging
 
 @{
     ViewData["Title"] = "Index";
@@ -13,15 +13,31 @@
         <div class="card border-dark">
             <div class="card-header bg-dark text-light text-center"><i class="fas fa-table"></i> Lista</div>
             <div class="card-body">
-                <div class="row container">
-                    <div class="input-group mb-3">
-                        <input class="form-control form-control-sm col-sm-4" id="filtro-nome">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="text-align-center container">
+                            <form method="get">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-append">
+                                        <a class="btn btn-sm btn-outline-success my-2 my-sm-0 m-2" asp-action="Create"><i class="fas fa-plus-circle"> Cadastrar</i></a>
+                                    </div>
+                                    <input name="filter" type="text" class="form-control form-control-sm" placeholder="Pesquisa: Nome/Estado" aria-describedby="button-addon2" value="@Model.RouteValue["Filter"]" />
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-sm btn-outline-info" id="button-addon2">
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span><i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
                         </div>
-                        <a class="btn btn-sm btn-outline-success my-2 my-sm-0 m-2" asp-action="Create"><i class="fas fa-plus-circle"> Cadastrar</i></a>
                     </div>
                 </div>
+
+                <nav class="pagination justify-content-center" aria-label="Collector navigation example">
+                    @await this.Component.InvokeAsync("Pager", new { pagingList = this.Model })
+                </nav>
+
                 <hr />
                 <div class="table-responsive-lg">
                     <table class="table table-dark table-bordered table-hover" style="font-size: 12px;" id="lista">
@@ -77,10 +93,3 @@
 <br />
 
 <script src="/js/FieldSearch.js" type="text/javascript"></script>
-@Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }), new PagedListRenderOptions
-{
-    PageClasses = new string[] { "page-link" },
-    UlElementClasses = new string[] { "pagination justify-content-center" },
-    LiElementClasses = new string[] { "page-item" },
-    DisplayItemSliceAndTotal = false
-})

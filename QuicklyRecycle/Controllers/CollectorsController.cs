@@ -2,10 +2,11 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using QuicklyRecycle.Data;
 using QuicklyRecycle.Models;
-using X.PagedList;
+using ReflectionIT.Mvc.Paging;
 
 namespace QuicklyRecycle.Controllers
 {
@@ -20,14 +21,18 @@ namespace QuicklyRecycle.Controllers
 		}
 
 		// GET: Collectors
-		public async Task<IActionResult> Index(int? pagina)
-
+		public async Task<IActionResult> Index(string filter, int pageindex = 1, string sort = "Name")
 		{
 
-			const int itensPorPagina = 10;
-			int numeroPagina = (pagina ?? 1);
+			var resultado = _context.Collector.AsNoTracking().AsQueryable();
 
-			return View(await _context.Collector.ToPagedListAsync(numeroPagina, itensPorPagina));
+			if (!string.IsNullOrWhiteSpace(filter))
+			{
+				resultado = resultado.Where(p => p.Name.Contains(filter));
+			}
+			var model = await PagingList.CreateAsync(resultado, 10, pageindex, sort, "Name");
+			model.RouteValue = new RouteValueDictionary { { "filter", filter } };
+			return View(model);
 		}
 
 		// GET: Collectors/Details/5
