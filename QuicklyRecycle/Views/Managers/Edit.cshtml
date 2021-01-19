@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container py-3">
-    <form asp-action="Edit">
+    <form asp-action="Edit" class="needs-validation" novalidate>
         <div class="card border border-dark">
             <div class="card-header bg-dark text-white text-center">Nova Empresa</div>
             <div class="card-body">
@@ -16,22 +16,28 @@
                         <input type="hidden" asp-for="Id" />
                         <div class="form-group">
                             <label asp-for="Name" class="control-label"></label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Name" class="form-control" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Nome
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label asp-for="Telefone" class="control-label"></label>
-                            <input asp-for="Telefone" class="form-control" />
-                            <span asp-validation-for="Telefone" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Telefone" class="form-control" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Telefone
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="CompanyId" class="control-label"></label>
-                            <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
-                            <span asp-validation-for="CompanyId" class="text-danger font-weight-bold"></span>
+                            <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId" required></select>
+                            <div class="invalid-feedback">
+                                Preencha o campo com uma Empresa
+                            </div>
                         </div>
                     </div>
                 </div>

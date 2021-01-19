@@ -6,11 +6,10 @@
 }
 
 <div class="container py-3">
-    <form asp-action="Edit">
+    <form asp-action="Edit" class="needs-validation" novalidate>
         <div class="card border border-dark">
             <div class="card-header bg-dark text-white text-center">Nova Empresa</div>
             <div class="card-body">
-
 
                 <div class="row">
                     <div class="col-md-12">
@@ -18,8 +17,10 @@
                         <input type="hidden" asp-for="Id" />
                         <div class="form-group">
                             <label asp-for="Name" class="control-label"></label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Name" class="form-control" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Nome
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,15 +29,17 @@
                     <div class="col-md-2">
                         <div class="form-group">
                             <label asp-for="CEP" class="control-label"></label>
-                            <input asp-for="CEP" class="form-control" id="cep" />
-                            <span asp-validation-for="CEP" class="text-danger font-weight-bold"></span>
+                            <input asp-for="CEP" class="form-control" id="cep" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um CEP
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="UF" class="control-label"></label>
-                            <select asp-for="UF" class="form-control" id="uf">
+                            <select asp-for="UF" class="form-control" id="uf" required>
                                 <option value="" selected disabled hidden>Selecione uma Opção</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -66,62 +69,78 @@
                                 <option value="TO">Tocantins</option>
                                 <option value="DF">Distrito Federal</option>
                             </select>
-                            <span asp-validation-for="UF" class="text-danger font-weight-bold"></span>
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Estado
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="Neighborhood" class="control-label"></label>
-                            <input asp-for="Neighborhood" class="form-control" id="bairro" />
-                            <span asp-validation-for="Neighborhood" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Neighborhood" class="form-control" id="bairro" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Bairro
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="City" class="control-label"></label>
-                            <input asp-for="City" class="form-control" id="cidade" />
-                            <span asp-validation-for="City" class="text-danger font-weight-bold"></span>
+                            <input asp-for="City" class="form-control" id="cidade" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com uma Cidade
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="PublicPlace" class="control-label"></label>
-                            <input asp-for="PublicPlace" class="form-control" id="logradouro" />
-                            <span asp-validation-for="PublicPlace" class="text-danger font-weight-bold"></span>
+                            <input asp-for="PublicPlace" class="form-control" id="logradouro" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Nome
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="Complement" class="control-label"></label>
-                            <input asp-for="Complement" class="form-control" />
-                            <span asp-validation-for="Complement" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Complement" class="form-control" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Complemento
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="Number" class="control-label"></label>
-                            <input asp-for="Number" class="form-control" />
-                            <span asp-validation-for="Number" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Number" class="form-control" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Nome
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="CNPJ" class="control-label"></label>
-                            <input asp-for="CNPJ" class="form-control" id="cnpj" />
-                            <span asp-validation-for="CNPJ" class="text-danger font-weight-bold"></span>
+                            <input asp-for="CNPJ" class="form-control" id="cnpj" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um CNPJ
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="Phone" class="control-label"></label>
-                            <input asp-for="Phone" class="form-control" id="phone" />
-                            <span asp-validation-for="Phone" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Phone" class="form-control" id="phone" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Telefone
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="TypeRecycling" class="control-label"></label>
-                            <select asp-for="TypeRecycling" class="form-control" id="uf">
+                            <select asp-for="TypeRecycling" class="form-control" id="uf" required>
                                 <option value="" selected disabled hidden>Selecione uma Opção</option>
                                 <option value="Papel">Papel</option>
                                 <option value="Plástico">Plástico</option>
@@ -134,7 +153,9 @@
                                 <option value="Orgânicos">Orgânicos</option>
                                 <option value="Não Reciclavel">Não Reciclavel</option>
                             </select>
-                            <span asp-validation-for="TypeRecycling" class="text-danger font-weight-bold"></span>
+                            <div class="invalid-feedback">
+                                Preencha o campo com Tipo de Reciclagem
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -10,8 +10,8 @@
             backgroundColor: "transparent",
         },
         {
-            label: "Nâo Reciclados",
-            data: [11230, 12452, 11231, 91234, 123518, 12346, 68903, 40875, 28962, 12312, 12354, 97750],
+            label: "Não Reciclados",
+            data: [11230, 12452, 11231, 91234, 123518, 12346, 68903, 40875, 28962, 12312, 12354, 15354],
             borderWidth: 3,
             borderColor: '#e74c3c',
             backgroundColor: "transparent",

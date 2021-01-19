@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container py-3">
-    <form asp-action="Edit">
+    <form asp-action="Edit" class="needs-validation" novalidate>
         <div class="card border border-dark">
             <div class="card-header bg-dark text-white text-center">Novo Coletador</div>
             <div class="card-body">
@@ -16,24 +16,30 @@
                         <input type="hidden" asp-for="Id" />
                         <div class="form-group">
                             <label asp-for="Name" class="control-label"></label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Name" class="form-control" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Nome
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-2">
                         <div class="form-group">
                             <label asp-for="Landline" class="control-label"></label>
-                            <input asp-for="Landline" class="form-control" />
-                            <span asp-validation-for="Landline" class="text-danger font-weight-bold"></span>
+                            <input asp-for="Landline" class="form-control" id="phone" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Telefone Fixo
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="CellPhone" class="control-label"></label>
-                            <input asp-for="CellPhone" class="form-control" />
-                            <span asp-validation-for="CellPhone" class="text-danger font-weight-bold"></span>
+                            <input asp-for="CellPhone" class="form-control" id="cellphone" required />
+                            <div class="invalid-feedback">
+                                Preencha o campo com um Telefone Celular
+                            </div>
                         </div>
                     </div>
                 </div>

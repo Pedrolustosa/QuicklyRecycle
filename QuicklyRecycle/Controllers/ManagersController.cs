@@ -27,11 +27,11 @@ namespace QuicklyRecycle.Controllers
 		{
 
 			var resultado = _context.Manager.AsNoTracking().AsQueryable();
+			resultado = _context.Manager.Include(p => p.Company);
 
 			if (!string.IsNullOrWhiteSpace(filter))
 			{
 				resultado = resultado.Where(p => p.Name.Contains(filter));
-				resultado = _context.Manager.Include(p => p.Company);
 			}
 			
 			var model = await PagingList.CreateAsync(resultado, 10, pageindex, sort, "Name");
